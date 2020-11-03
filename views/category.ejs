@@ -14,7 +14,7 @@
     <% articles.forEach(function(article) { %>
       <article class="post">
         <div class="post__header">
-          <div><%= article.title %></div>
+          <h2><%= article.title %></h2>
           <div class="post__actions">
             <% if(username) { %>
               <a class="post__action" href="/update_article/<%= article.id %>">編輯</a>
@@ -26,7 +26,7 @@
           <a class="category" href="/category/<%= article.Category.id %>"><%= article.Category.name %></a>
         </div>
         <div class="post__content">
-          <%- article.content %>
+          <%- (article.content).substr(0,350) %>
         </div>
         <a class="btn-read-more" href="/article/<%= article.id %>">READ MORE</a>
       </article>
